@@ -1,0 +1,54 @@
+{
+  "N": 10848,
+  "datasets": ["BANC", "MCNS", "FAFB"],
+  "induced_edges_per_dataset": 10935,
+  "edges_per_node": 1.008,
+  "verification": {
+    "command": "python verify.py network.csv data",
+    "isomorphic": true,
+    "weakly_connected": true,
+    "self_loops_among_selected": 0,
+    "result": "VERIFICATION PASSED: N=10848, induced edges per dataset=10935"
+  },
+  "structure": "deep feed-forward broadcast tree (hub-of-hubs core + relay chains)",
+  "terminal_neurons_out0": 4228,
+  "max_undirected_depth_from_apex": 35,
+  "apex_row_index": 0,
+  "key_neurons_FAFB_v783": {
+    "apex_root": {
+      "id": 720575940625525740, "in_circuit_out_deg": 16, "in_circuit_in_deg": 21,
+      "cell_type": "OA-AL2b2", "super_class": "visual_centrifugal",
+      "top_nt": "acetylcholine", "top_nt_conf": 0.86, "known_nt": "tyramine (lit., unsure)", "side": "left"
+    },
+    "dominant_broadcast_hub": {
+      "id": 720575940626044942, "in_circuit_out_deg": 685, "in_circuit_in_deg": 63,
+      "cell_type": "OA-AL2b2", "super_class": "visual_centrifugal",
+      "top_nt": "acetylcholine", "top_nt_conf": 0.84, "known_nt": "tyramine (lit., unsure)", "side": "right"
+    },
+    "integrator_sub_hub": {
+      "id": 720575940632427603, "in_circuit_out_deg": 40, "in_circuit_in_deg": 169,
+      "cell_type": "H2", "super_class": "visual_projection", "top_nt": "acetylcholine", "side": "right"
+    },
+    "sub_hub": {
+      "id": 720575940613455986, "in_circuit_out_deg": 33, "in_circuit_in_deg": 57,
+      "cell_type": "LT62", "super_class": "visual_projection", "top_nt": "acetylcholine", "side": "left"
+    },
+    "terminal_samples": [
+      {"id": 720575940623758377, "cell_type": "AN_multi_125", "super_class": "ascending", "top_nt": "serotonin"},
+      {"id": 720575940619166774, "cell_type": "Mi4", "super_class": "optic", "top_nt": "gaba"},
+      {"id": 720575940641661173, "cell_type": "Mi10", "super_class": "optic", "top_nt": "acetylcholine"},
+      {"id": 720575940609779524, "cell_type": "C2", "super_class": "optic", "top_nt": "gaba"}
+    ]
+  },
+  "critical_test_hub_685_fanout": {
+    "hub_id": 720575940626044942,
+    "n_targets_in_circuit": 685,
+    "n_annotated": 685,
+    "super_class_counts": {"optic": 683, "ascending": 1, "visual_projection": 1},
+    "n_distinct_cell_types": 23,
+    "top_cell_type_counts": {"C3": 256, "Mi1": 144, "C2": 83, "Mi4": 76, "Tm3": 59, "Mi10": 17, "Sm32": 10, "Tm9": 8, "Lawf2": 8},
+    "neurotransmitter_counts": {"gaba": 421, "acetylcholine": 258, "glutamate": 4, "serotonin": 1, "dopamine": 1},
+    "conclusion": "region-coherent (medulla columnar interneurons) but cell-type-heterogeneous and mixed-NT -> NOT a single-cell-type labelled line"
+  },
+  "caveat": "Cross-dataset correspondence is structural / graph-isomorphic only; biological identity is asserted for FAFB neurons only (FlyWire v783 annotations)."
+}
